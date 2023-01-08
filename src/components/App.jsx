@@ -5,12 +5,8 @@ import { Header, Link } from './App.styled';
 import { lazy } from 'react';
 
 import Home from '../pages/Home/Home';
-
+import MovieDetails from './MovieDetails/MovieDetails';
 import SearchMovies from 'pages/Movies/SearchMovies';
-
-const MovieDetails = lazy(() =>
-  import('../components/MovieDetails/MovieDetails')
-);
 
 const MovieCredits = lazy(() =>
   import('../components/MovieCredits/MovieCredits')
