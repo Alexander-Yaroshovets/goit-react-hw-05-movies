@@ -74,7 +74,10 @@ const MovieDetails = () => {
       </MovieInfoContainer>
       <div>
         <h3>Additional Information</h3>
-        <NextInfoLink to={`rewievs`} state={{ from: location.state.from }}>
+        <NextInfoLink
+          to={`rewievs`}
+          state={{ from: location.state?.from ?? '/movies' }}
+        >
           Rewievs
         </NextInfoLink>
         <NextInfoLink to={`credits`} state={{ from: location.state.from }}>
