@@ -88,7 +88,13 @@ const SearchMovies = () => {
         {items.map(item => {
           const { id, title } = item;
           return (
-            <StyledFilmItem to={`${id}`} key={id} state={{ from: location }}>
+            <StyledFilmItem
+              to={`${id}`}
+              key={id}
+              state={{
+                from: location,
+              }}
+            >
               {title}
             </StyledFilmItem>
           );

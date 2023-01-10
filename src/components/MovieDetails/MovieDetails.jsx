@@ -24,7 +24,7 @@ const MovieDetails = () => {
 
   const location = useLocation();
 
-  const BackLinkHref = location.state?.from ?? '/movies';
+  const BackLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     const handleEffect = async () => {
@@ -80,7 +80,10 @@ const MovieDetails = () => {
         >
           Rewievs
         </NextInfoLink>
-        <NextInfoLink to={`credits`} state={{ from: location.state.from }}>
+        <NextInfoLink
+          to={`credits`}
+          state={{ from: location.state?.from ?? '/movies' }}
+        >
           Cast
         </NextInfoLink>
       </div>

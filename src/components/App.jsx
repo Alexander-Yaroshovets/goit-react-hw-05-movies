@@ -1,9 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { Header, Link } from './App.styled';
-
 import { lazy } from 'react';
-
+import NavBar from './Navigation/Navigatioon';
 import Home from '../pages/Home/Home';
 import MovieDetails from './MovieDetails/MovieDetails';
 import SearchMovies from 'pages/Movies/SearchMovies';
@@ -19,20 +17,11 @@ const MovieReviews = lazy(() =>
 const App = () => {
   return (
     <>
-      <Header>
-        <nav>
-          <Link to="/" end>
-            Home
-          </Link>
-          <Link to="/movies">Movies</Link>
-        </nav>
-      </Header>
-
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="movies/:movieId" element={<MovieDetails />} />
         <Route path="movies" element={<SearchMovies />} />
-        <Route path="movies/:movieId" element={<MovieDetails />}>
+        <Route path="/movies/:movieId" element={<MovieDetails />}>
           <Route path="rewievs" element={<MovieReviews />} />
           <Route path="credits" element={<MovieCredits />} />
         </Route>
